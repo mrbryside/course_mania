@@ -8,11 +8,13 @@ export function* getPreviewImage() {
 
   if (
     allState.previewLink !==
-    `http://localhost:2000/assets/testclip/frame${allState.videoSecond}.jpg`
+    `http://http://194.31.53.133:2000/assets/testclip/frame${
+      allState.videoSecond
+    }.jpg`
   ) {
     yield put(
       setPreviewLink(
-        `http://localhost:2000/assets/testclip/frame${
+        `http://194.31.53.133:2000/assets/testclip/frame${
           allState.videoSecond
         }.jpg`,
       ),
