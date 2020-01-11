@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/mouse-events-have-key-events */
 /**
  *
@@ -194,7 +195,11 @@ export function TestVideo(props) {
                 onMouseEnter={() => onHoverControl(false)}
               >
                 <ImagePreview>
-                  <img src={previewLink} width="100%" height="100%" />
+                  <img
+                    src={`data:image/jpeg;base64,${previewLink}`}
+                    width="100%"
+                    height="100%"
+                  />
                   <PreviewTime>{seekPoint}</PreviewTime>
                 </ImagePreview>
               </SeekPreview>
