@@ -21,11 +21,13 @@ import Footer from 'components/Footer';
 import GlobalStyle from '../../global-styles';
 
 const AppWrapper = styled.div`
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
+  background-color: #f3f3f5;
   top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  overflow-y: auto;
 `;
 
 export default function App() {
