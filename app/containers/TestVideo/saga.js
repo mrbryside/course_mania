@@ -27,13 +27,23 @@ import { setPreviewLink } from './actions';
 export function* getImage() {
   // Select username from store
   // const username = yield select(makeSelectUsername());
-  const requestURL = `http://194.31.53.133:2000/getimg`;
+  const requestURL = `http://localhost:3000/api/image-service`;
 
   try {
     // Call our request helper (see 'utils/request')
-    const repos = yield call(request, requestURL);
-    yield put(setPreviewLink(repos.image));
+    const response = yield call(request, requestURL, {
+      method: 'GET',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        mode: 'no-cors',
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    });
+    console.log(response);
+    yield put(setPreviewLink(response.data));
   } catch (err) {
+    console.log(err);
     // yield put(repoLoadingError(err));
   }
 }
