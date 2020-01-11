@@ -6,4 +6,6 @@ COPY /build/. ./build
 
 EXPOSE 6000
 
-CMD [ "npm", "start"]
+CMD [ "npm", "i", "-g", "serve"]
+
+CMD [ "serve", "build", "-p", "6000"]
