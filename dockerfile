@@ -6,6 +6,6 @@ COPY /build/. ./build
 
 EXPOSE 6000
 
-CMD [ "npm", "i", "-g", "serve"]
+RUN npm install -g serve
 
 CMD [ "serve", "build", "-p", "6000"]
