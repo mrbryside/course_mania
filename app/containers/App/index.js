@@ -36,8 +36,8 @@ export default function App() {
       </Helmet>
       {/* <Header /> */}
       <Switch>
-        <Route exact path="/" component={LoginContainer} />
-        <Route path="/video" component={TestVideo} />
+        <Route exact path="/" component={TestVideo} />
+        <Route path="/video" component={LoginContainer} />
         <Route path="/features" component={FeaturePage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
