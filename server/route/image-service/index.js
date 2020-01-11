@@ -8,7 +8,7 @@ module.exports = args => {
 
   const serviceProvider = (req, res) => {
     const options = {
-      url: `http://localhost:1000/getimg`,
+      url: `http://localhost:2000/getimg`,
       method: 'GET',
       headers: {
         Accept: '*/*',
