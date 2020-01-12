@@ -2,7 +2,7 @@ FROM node:10
 
 WORKDIR /usr/src/app
 
-COPY /build/. ./build
+COPY . ./
 
 EXPOSE 3000
 
