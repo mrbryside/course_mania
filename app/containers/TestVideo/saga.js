@@ -29,6 +29,8 @@ export function* getImage() {
   // const username = yield select(makeSelectUsername());
   const requestURL = `http://194.31.53.133/api/image-service`;
 
+  yield delay(500);
+
   try {
     // Call our request helper (see 'utils/request')
     const response = yield call(request, requestURL, {
