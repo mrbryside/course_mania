@@ -28,7 +28,7 @@ export function* getImage() {
   // Select username from store
   // const username = yield select(makeSelectUsername());
   const allState = yield select(makeSelectTestVideo());
-  const requestURL = `http://194.31.53.133:2000/api/image-service`;
+  const requestURL = `http://194.31.53.133/api/image-service`;
 
   if (
     allState.previewLink.second === -1 &&
