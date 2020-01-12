@@ -196,7 +196,7 @@ export function TestVideo(props) {
               >
                 <ImagePreview>
                   <img
-                    src={`data:image/jpeg;base64,${previewLink.data}`}
+                    src={`data:image/jpeg;base64,${previewLink}`}
                     width="100%"
                     height="100%"
                   />
