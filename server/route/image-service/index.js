@@ -8,14 +8,13 @@ module.exports = args => {
 
   const serviceProvider = (req, res) => {
     const options = {
-      url: `http://localhost:2000/getimg`,
+      url: `http://194.31.53.133:2000/getimg`,
       method: 'GET',
       headers: {
         Accept: '*/*',
         'content-type': 'application/json',
         'x-forwarded-for': req.headers['x-forwarded-for'],
       },
-      // json: true,
     };
 
     try {
