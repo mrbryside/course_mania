@@ -4,8 +4,6 @@ WORKDIR /usr/src/app
 
 COPY /build/. ./build
 
-EXPOSE 6000
+EXPOSE 3000
 
-RUN npm install -g serve
-
-CMD [ "serve", "-s", "build", "-p", "6000"]
+CMD [ "npm", "run", "start:prod"]
