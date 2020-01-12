@@ -27,24 +27,30 @@ import { setPreviewLink } from './actions';
 export function* getImage() {
   // Select username from store
   // const username = yield select(makeSelectUsername());
-  const requestURL = `http://194.31.53.133/api/image-service`;
+  const allState = yield select(makeSelectTestVideo());
+  const requestURL = `http://194.31.53.133:2000/api/image-service`;
 
-  yield delay(500);
-
-  try {
-    // Call our request helper (see 'utils/request')
-    const response = yield call(request, requestURL, {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-    });
-    console.log(response);
-    yield put(setPreviewLink(response.data));
-  } catch (err) {
-    console.log(err);
-    // yield put(repoLoadingError(err));
+  if (
+    allState.previewLink.second === -1 &&
+    allState.videoSecond !== allState.previewLink.second
+  ) {
+    try {
+      // Call our request helper (see 'utils/request')
+      const response = yield call(request, requestURL, {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      });
+      console.log(response);
+      yield put(
+        setPreviewLink({ second: allState.videoSecond, data: response.data }),
+      );
+    } catch (err) {
+      console.log(err);
+      // yield put(repoLoadingError(err));
+    }
   }
 }
 

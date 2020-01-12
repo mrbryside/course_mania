@@ -29,7 +29,7 @@ export const initialState = {
   videoLoadingValue: 0.0,
   videoSecond: 0,
   secondToEndVideo: false,
-  previewLink: undefined,
+  previewLink: { second: -1, data: undefined },
 };
 
 function toHHMMSS(seconds) {
@@ -131,7 +131,10 @@ const testVideoReducer = (state = initialState, action) =>
         draft.videoDuration = action.payload;
         break;
       case SET_PREVIEW_LINK:
-        draft.previewLink = action.payload;
+        draft.previewLink = {
+          second: action.payload.second,
+          data: action.payload.data,
+        };
         break;
     }
   });
